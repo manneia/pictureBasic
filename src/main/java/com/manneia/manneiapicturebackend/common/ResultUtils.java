@@ -13,15 +13,11 @@ public class ResultUtils {
         throw new UnsupportedOperationException(ResponseCode.INSTANTIATION_ERROR.getMessage());
     }
 
-    public static <T> BaseResponse<T> invokeSuccess(T data, String size) {
+    public static <T> BaseResponse<T> invokeSuccess(T data, int size) {
         return new BaseResponse<>(ResponseCode.INVOKE_SUCCESS_CODE.getCode(), data, ResponseCode.INVOKE_SUCCESS_CODE.getMessage(), size);
     }
 
-    public static <T> BaseResponse<T> invokeError(ResponseCode responseCode, T data, String size) {
+    public static <T> BaseResponse<T> invokeError(ResponseCode responseCode, T data, int size) {
         return new BaseResponse<>(responseCode.getCode(), data, ResponseCode.INVOKE_ERROR_CODE.getMessage(), size);
-    }
-
-    public static <T> BaseResponse<T> error(String code, String message, T data, String size) {
-        return new BaseResponse<>(code, data, message, size);
     }
 }

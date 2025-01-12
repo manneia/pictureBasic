@@ -4,6 +4,7 @@ import com.alibaba.fastjson2.JSON;
 import com.manneia.manneiapicturebackend.common.BaseResponse;
 import com.manneia.manneiapicturebackend.common.ResultUtils;
 import com.manneia.manneiapicturebackend.constant.ResponseCode;
+import com.manneia.manneiapicturebackend.model.response.BaseVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -20,12 +21,15 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(BusinessException.class)
     public BaseResponse<Object> bussinessExceptionHandler(BusinessException e) {
         log.error("BusinessException: {}", JSON.toJSONString(e));
-        return ResultUtils.invokeError(ResponseCode.INTERIOR_SYSTEM_ERROR, e, "1");
+        BaseVo baseVo = new BaseVo();
+        baseVo.setInvokeResult(Boolean.FALSE);
+        baseVo.setInvokeMessage(e.getMessage());
+        return ResultUtils.invokeError(ResponseCode.INTERIOR_SYSTEM_ERROR, baseVo, 1);
     }
 
     @ExceptionHandler(RuntimeException.class)
     public BaseResponse<Object> runtimeExceptionHandler(RuntimeException e) {
         log.error("RuntimeException: {}", JSON.toJSONString(e));
-        return ResultUtils.invokeError(ResponseCode.SYSTEM_ERROR, e, "1");
+        return ResultUtils.invokeError(ResponseCode.SYSTEM_ERROR, e.getMessage(), 1);
     }
 }

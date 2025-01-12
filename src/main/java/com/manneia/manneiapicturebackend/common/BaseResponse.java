@@ -20,20 +20,20 @@ public class BaseResponse<T> implements Serializable {
 
     private final String message;
 
-    private String total;
+    private int total;
 
-    public BaseResponse(String code, T data, String message, String total) {
+    public BaseResponse(String code, T data, String message, int total) {
         this.code = code;
         this.data = data;
         this.message = message;
         this.total = total;
     }
 
-    public BaseResponse(String code, T data, String total) {
+    public BaseResponse(String code, T data, int total) {
         this(code, data, "", total);
     }
 
     public BaseResponse(ResponseCode responseCode) {
-        this(responseCode.getCode(), null, responseCode.getMessage(), "");
+        this(responseCode.getCode(), null, responseCode.getMessage(), 0);
     }
 }

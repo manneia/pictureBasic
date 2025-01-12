@@ -15,17 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/picture")
-public class PictureController {
+public class PictureHealthController {
 
     @PostMapping("/post/health")
     @ApiOperation(value = "post请求健康检查")
     public BaseResponse<String> postHealth() {
-        return ResultUtils.invokeSuccess("ok", "1");
+        return ResultUtils.invokeSuccess("ok", 1);
     }
 
     @GetMapping("/get/health")
     @ApiOperation(value = "get请求健康检查")
     public BaseResponse<String> getHealth() {
-        return ResultUtils.invokeSuccess("ok", "1");
+        return ResultUtils.invokeSuccess("ok", 1);
     }
 }

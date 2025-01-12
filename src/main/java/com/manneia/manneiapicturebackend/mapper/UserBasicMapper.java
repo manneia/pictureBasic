@@ -1,6 +1,6 @@
 package com.manneia.manneiapicturebackend.mapper;
 
-import com.manneia.manneiapicturebackend.model.domain.UserBasic;
+import com.manneia.manneiapicturebackend.model.domain.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2025-01-09 13:45:01
 * @Entity com.manneia.manneiapicturebackend.model.domain.UserBasic
 */
-public interface UserBasicMapper extends BaseMapper<UserBasic> {
+public interface UserBasicMapper extends BaseMapper<User> {
 
 }
 

@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @TableName(value ="user_basic")
 @Data
-public class UserBasic implements Serializable {
+public class User implements Serializable {
     /**
      * 用户id
      */

@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.manneia.manneiapicturebackend.mapper.UserBasicMapper">
 
-    <resultMap id="BaseResultMap" type="com.manneia.manneiapicturebackend.model.domain.UserBasic">
+    <resultMap id="BaseResultMap" type="com.manneia.manneiapicturebackend.model.domain.User">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="userAccount" column="userAccount" jdbcType="VARCHAR"/>
             <result property="userPassword" column="userPassword" jdbcType="VARCHAR"/>
